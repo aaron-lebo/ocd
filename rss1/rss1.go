@@ -6,26 +6,26 @@ import (
 )
 
 type DublinCore struct {
-	Title       string    `xml:"title"`
-	Creator     string    `xml:"creator"`
-	Subject     string    `xml:"subject"`
-	Description string    `xml:"description"`
-	Contributor string    `xml:"contributor"`
-	Date        time.Time `xml:"date"`
-	Type        string    `xml:"type"`
-	Format      string    `xml:"format"`
-	Identifier  string    `xml:"identifier"`
-	Source      string    `xml:"source"`
-	Language    string    `xml:"language"`
-	Relation    string    `xml:"relation"`
-	Coverage    string    `xml:"coverage"`
-	Rights      string    `xml:"rights"`
+	Title       string    `xml:"http://purl.org/dc/elements/1.1/ title"`
+	Creator     string    `xml:"http://purl.org/dc/elements/1.1/ creator"`
+	Subject     string    `xml:"http://purl.org/dc/elements/1.1/ subject"`
+	Description string    `xml:"http://purl.org/dc/elements/1.1/ description"`
+	Contributor string    `xml:"http://purl.org/dc/elements/1.1/ contributor"`
+	Date        time.Time `xml:"http://purl.org/dc/elements/1.1/ date"`
+	Type        string    `xml:"http://purl.org/dc/elements/1.1/ type"`
+	Format      string    `xml:"http://purl.org/dc/elements/1.1/ format"`
+	Identifier  string    `xml:"http://purl.org/dc/elements/1.1/ identifier"`
+	Source      string    `xml:"http://purl.org/dc/elements/1.1/ source"`
+	Language    string    `xml:"http://purl.org/dc/elements/1.1/ language"`
+	Relation    string    `xml:"http://purl.org/dc/elements/1.1/ relation"`
+	Coverage    string    `xml:"http://purl.org/dc/elements/1.1/ coverage"`
+	Rights      string    `xml:"http://purl.org/dc/elements/1.1/ rights"`
 }
 
 type Syndication struct {
-	UpdatePeriod    string    `xml:"updatePeriod"`
-	UpdateFrequency int       `xml:"updateFrequency"`
-	UpdateBase      time.Time `xml:"updateBase"`
+	UpdatePeriod    string    `xml:"http://purl.org/1.0/modules/syndication/ updatePeriod"`
+	UpdateFrequency int       `xml:"http://purl.org/1.0/modules/syndication/ updateFrequency"`
+	UpdateBase      time.Time `xml:"http://purl.org/1.0/modules/syndication/ updateBase"`
 }
 
 type Image struct {
