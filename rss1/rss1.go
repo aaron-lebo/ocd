@@ -7,7 +7,7 @@ import (
 
 type DublinCore struct {
 	Title       string    `xml:"title"`
-    Creator     string    `xml:"creator"`
+	Creator     string    `xml:"creator"`
 	Subject     string    `xml:"subject"`
 	Description string    `xml:"description"`
 	Contributor string    `xml:"contributor"`
