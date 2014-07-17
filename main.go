@@ -37,7 +37,7 @@ func main() {
 		fmt.Println("Error parsing response:", err)
 		return
 	}
-    for _, entry := range feed.Entries {
-        fmt.Println(entry.Title)
-    }
+	for _, entry := range feed.Entries {
+		fmt.Println(entry.Title)
+	}
 }
