@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/xml"
+	"fmt"
 	"github.com/fisher-lebo/ocd/atom"
 	"github.com/fisher-lebo/ocd/rss"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
