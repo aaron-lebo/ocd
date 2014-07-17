@@ -35,7 +35,7 @@ type TextInput struct {
 }
 
 type Hour struct {
-	Text string `,chardata`
+    Text string `xml:",chardata"`
 }
 
 type SkipHours struct {
@@ -43,7 +43,7 @@ type SkipHours struct {
 }
 
 type Day struct {
-	Text string `,chardata`
+    Text string `xml:",chardata"`
 }
 
 type SkipDays struct {
