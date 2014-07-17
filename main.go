@@ -48,9 +48,8 @@ func main() {
 	if err != nil {
 		fmt.Println("Error parsing response:", err)
 	} else {
-		for _, item := range rdf.Channel.Items {
+		for _, item := range rdf.Items {
 			fmt.Println(item)
 		}
-		return
 	}
 }
