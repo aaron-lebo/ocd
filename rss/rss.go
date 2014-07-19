@@ -35,22 +35,6 @@ type TextInput struct {
 	Link        string `xml:"link"`
 }
 
-type Hour struct {
-	Text string `xml:",chardata"`
-}
-
-type SkipHours struct {
-	Hours []Hour `xml:"hour"`
-}
-
-type Day struct {
-	Text string `xml:",chardata"`
-}
-
-type SkipDays struct {
-	Days []Day `xml:"day"`
-}
-
 type Enclosure struct {
 	Url    string `xml:"url,attr"`
 	Length string `xml:"length,attr"`
@@ -98,8 +82,8 @@ type Channel struct {
 	Image         Image      `xml:"image"`
 	Rating        string     `xml:"rating"`
 	TextInput     TextInput  `xml:"textInput"`
-	skipHours     SkipHours  `xml:"skipHours"`
-	skipDays      SkipDays   `xml:"skipDays"`
+	SkipHours     []int      `xml:"skipHours>hour"`
+	SkipDays      []string   `xml:"skipDays>day"`
 	Items         []Item     `xml:"item"`
 	AtomLink      atom.Link  `xml:"http://www.w3.org/2005/Atom link"`
 }
