@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/xml"
 	"fmt"
 	"github.com/fisher-lebo/ocd/atom"
@@ -22,10 +23,14 @@ func main() {
 	body, _ := ioutil.ReadAll(resp.Body)
 
 	var rss_ rss.Rss
-	err = xml.Unmarshal(body, &rss_)
+	decoder := xml.NewDecoder(bytes.NewBuffer(body))
+	decoder.DefaultSpace = "rss"
+	err = decoder.Decode(&rss_)
 	if err != nil {
 		fmt.Println("Error parsing response:", err)
 	} else {
+		fmt.Println(rss_.Channel.Link)
+		fmt.Printf("%+v\n", rss_.Channel.AtomLink)
 		for _, item := range rss_.Channel.Items {
 			fmt.Println(item.Title)
 		}

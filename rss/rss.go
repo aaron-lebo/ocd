@@ -2,6 +2,7 @@ package rss
 
 import (
 	"encoding/xml"
+	"github.com/fisher-lebo/ocd/atom"
 	"time"
 )
 
@@ -35,7 +36,7 @@ type TextInput struct {
 }
 
 type Hour struct {
-    Text string `xml:",chardata"`
+	Text string `xml:",chardata"`
 }
 
 type SkipHours struct {
@@ -43,7 +44,7 @@ type SkipHours struct {
 }
 
 type Day struct {
-    Text string `xml:",chardata"`
+	Text string `xml:",chardata"`
 }
 
 type SkipDays struct {
@@ -82,7 +83,7 @@ type Item struct {
 
 type Channel struct {
 	Title         string     `xml:"title"`
-	Link          string     `xml:"link"`
+	Link          string     `xml:"rss link"`
 	Description   string     `xml:"description"`
 	Language      string     `xml:"language"`
 	Copyright     string     `xml:"copyright"`
@@ -100,6 +101,7 @@ type Channel struct {
 	skipHours     SkipHours  `xml:"skipHours"`
 	skipDays      SkipDays   `xml:"skipDays"`
 	Items         []Item     `xml:"item"`
+	AtomLink      atom.Link  `xml:"http://www.w3.org/2005/Atom link"`
 }
 
 type Rss struct {
