@@ -2,7 +2,8 @@ package rss1
 
 import (
 	"encoding/xml"
-	"time"
+    "github.com/fisher-lebo/ocd/modules/dublincore"
+    "github.com/fisher-lebo/ocd/modules/syndication"
 )
 
 type RDF struct {
@@ -19,8 +20,8 @@ type Channel struct {
 	Image       Image     `xml:"image"`
 	Items       []Li      `xml:"items>Seq>li"`
 	TextInput   TextInput `xml:"textinput"`
-	DublinCore
-	Syndication
+	dublincore.DublinCore
+	syndication.Syndication
 }
 
 type Item struct {
@@ -28,7 +29,7 @@ type Item struct {
 	Title       string `xml:"title"`
 	Link        string `xml:"link"`
 	Description string `xml:"description"`
-	DublinCore
+	dublincore.DublinCore
 }
 
 type Image struct {
@@ -36,7 +37,7 @@ type Image struct {
 	Title string `xml:"title"`
 	Url   string `xml:"url"`
 	Link  string `xml:"link"`
-	DublinCore
+	dublincore.DublinCore
 }
 
 type Li struct {
@@ -49,28 +50,5 @@ type TextInput struct {
 	Description string `xml:"description"`
 	Name        string `xml:"name"`
 	Link        string `xml:"link"`
-	DublinCore
-}
-
-type DublinCore struct {
-	Title       string    `xml:"title"`
-	Creator     string    `xml:"creator"`
-	Subject     string    `xml:"subject"`
-	Description string    `xml:"description"`
-	Contributor string    `xml:"contributor"`
-	Date        time.Time `xml:"date"`
-	Type        string    `xml:"type"`
-	Format      string    `xml:"format"`
-	Identifier  string    `xml:"identifier"`
-	Source      string    `xml:"source"`
-	Language    string    `xml:"language"`
-	Relation    string    `xml:"relation"`
-	Coverage    string    `xml:"coverage"`
-	Rights      string    `xml:"rights"`
-}
-
-type Syndication struct {
-	UpdatePeriod    string    `xml:"updatePeriod"`
-	UpdateFrequency int       `xml:"updateFrequency"`
-	UpdateBase      time.Time `xml:"updateBase"`
+	dublincore.DublinCore
 }
