@@ -5,6 +5,53 @@ import (
 	"time"
 )
 
+type RDF struct {
+	XMLName xml.Name `xml:"http://www.w3.org/1999/02/22-rdf-syntax-ns# RDF"`
+	Channel Channel  `xml:"channel"`
+	Items   []Item   `xml:"item"`
+}
+
+type Channel struct {
+	About       string    `xml:"about,attr"`
+	Title       string    `xml:"title"`
+	Link        string    `xml:"link"`
+	Description string    `xml:"description"`
+	Image       Image     `xml:"image"`
+	Items       []Li      `xml:"items>Seq>li"`
+	TextInput   TextInput `xml:"textinput"`
+	DublinCore
+	Syndication
+}
+
+type Item struct {
+	About       string `xml:"about,attr"`
+	Title       string `xml:"title"`
+	Link        string `xml:"link"`
+	Description string `xml:"description"`
+	DublinCore
+}
+
+type Image struct {
+	About string `xml:"about,attr"`
+	Title string `xml:"title"`
+	Url   string `xml:"url"`
+	Link  string `xml:"link"`
+	DublinCore
+}
+
+type Li struct {
+	Resource string `xml:"resource,attr"`
+}
+
+type TextInput struct {
+	About       string `xml:"about,attr"`
+	Title       string `xml:"title"`
+	Description string `xml:"description"`
+	Name        string `xml:"name"`
+	Link        string `xml:"link"`
+	DublinCore
+}
+
 type DublinCore struct {
 	Title       string    `xml:"title"`
 	Creator     string    `xml:"creator"`
@@ -26,51 +73,4 @@ type Syndication struct {
 	UpdatePeriod    string    `xml:"updatePeriod"`
 	UpdateFrequency int       `xml:"updateFrequency"`
 	UpdateBase      time.Time `xml:"updateBase"`
-}
-
-type Image struct {
-	DublinCore
-	About string `xml:"about,attr"`
-	Title string `xml:"title"`
-	Url   string `xml:"url"`
-	Link  string `xml:"link"`
-}
-
-type Li struct {
-	Resource string `xml:"resource,attr"`
-}
-
-type TextInput struct {
-	DublinCore
-	About       string `xml:"about,attr"`
-	Title       string `xml:"title"`
-	Description string `xml:"description"`
-	Name        string `xml:"name"`
-	Link        string `xml:"link"`
-}
-
-type Item struct {
-	DublinCore
-	About       string `xml:"about,attr"`
-	Title       string `xml:"title"`
-	Link        string `xml:"link"`
-	Description string `xml:"description"`
-}
-
-type Channel struct {
-	DublinCore
-	Syndication
-	About       string    `xml:"about,attr"`
-	Title       string    `xml:"title"`
-	Link        string    `xml:"link"`
-	Description string    `xml:"description"`
-	Image       Image     `xml:"image"`
-	Items       []Li      `xml:"items>Seq>li"`
-	TextInput   TextInput `xml:"textinput"`
-}
-
-type RDF struct {
-	XMLName xml.Name `xml:"http://www.w3.org/1999/02/22-rdf-syntax-ns# RDF"`
-	Channel Channel  `xml:"channel"`
-	Items   []Item   `xml:"item"`
 }

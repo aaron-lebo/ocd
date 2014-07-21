@@ -6,6 +6,35 @@ import (
 	"time"
 )
 
+type Rss struct {
+	XMLName xml.Name `xml:"rss"`
+	Version string   `xml:"version,attr"`
+	Channel Channel  `xml:"channel"`
+}
+
+type Channel struct {
+	Title         string     `xml:"title"`
+	Link          string     `xml:"rss link"`
+	Description   string     `xml:"description"`
+	Language      string     `xml:"language"`
+	Copyright     string     `xml:"copyright"`
+	WebMaster     string     `xml:"webMaster"`
+	pubDate       time.Time  `xml:"pubDate"`
+	LastBuildDate time.Time  `xml:"lastBuildDate"`
+	Categories    []Category `xml:"category"`
+	Generator     string     `xml:"generator"`
+	Docs          string     `xml:"docs"`
+	Cloud         Cloud      `xml:"cloud"`
+	Ttl           string     `xml:"ttl"`
+	Image         Image      `xml:"image"`
+	Rating        string     `xml:"rating"`
+	TextInput     TextInput  `xml:"textInput"`
+	SkipHours     []int      `xml:"skipHours>hour"`
+	SkipDays      []string   `xml:"skipDays>day"`
+	Items         []Item     `xml:"item"`
+	AtomLink      atom.Link  `xml:"http://www.w3.org/2005/Atom link"`
+}
+
 type Category struct {
 	Domain string `xml:"domain,attr"`
 	Text   string `xml:",chardata"`
@@ -35,6 +64,19 @@ type TextInput struct {
 	Link        string `xml:"link"`
 }
 
+type Item struct {
+	Title       string     `xml:"title"`
+	Link        string     `xml:"link"`
+	Description string     `xml:"description"`
+	Author      string     `xml:"author"`
+	Categories  []Category `xml:"category"`
+	Comments    string     `xml:"comments"`
+	Enclosure   Enclosure  `xml:"enclosure"`
+	Guid        Guid       `xml:"guid"`
+	PubDate     string     `xml:"pubDate"`
+	Source      Source     `xml:"source"`
+}
+
 type Enclosure struct {
 	Url    string `xml:"url,attr"`
 	Length string `xml:"length,attr"`
@@ -50,46 +92,4 @@ type Guid struct {
 type Source struct {
 	Url  string `xml:"url,attr"`
 	Text string `xml:",chardata"`
-}
-
-type Item struct {
-	Title       string     `xml:"title"`
-	Link        string     `xml:"link"`
-	Description string     `xml:"description"`
-	Author      string     `xml:"author"`
-	Categories  []Category `xml:"category"`
-	Comments    string     `xml:"comments"`
-	Enclosure   Enclosure  `xml:"enclosure"`
-	Guid        Guid       `xml:"guid"`
-	PubDate     string     `xml:"pubDate"`
-	Source      Source     `xml:"source"`
-}
-
-type Channel struct {
-	Title         string     `xml:"title"`
-	Link          string     `xml:"rss link"`
-	Description   string     `xml:"description"`
-	Language      string     `xml:"language"`
-	Copyright     string     `xml:"copyright"`
-	WebMaster     string     `xml:"webMaster"`
-	pubDate       time.Time  `xml:"pubDate"`
-	LastBuildDate time.Time  `xml:"lastBuildDate"`
-	Categories    []Category `xml:"category"`
-	Generator     string     `xml:"generator"`
-	Docs          string     `xml:"docs"`
-	Cloud         Cloud      `xml:"cloud"`
-	Ttl           string     `xml:"ttl"`
-	Image         Image      `xml:"image"`
-	Rating        string     `xml:"rating"`
-	TextInput     TextInput  `xml:"textInput"`
-	SkipHours     []int      `xml:"skipHours>hour"`
-	SkipDays      []string   `xml:"skipDays>day"`
-	Items         []Item     `xml:"item"`
-	AtomLink      atom.Link  `xml:"http://www.w3.org/2005/Atom link"`
-}
-
-type Rss struct {
-	XMLName xml.Name `xml:"rss"`
-	Version string   `xml:"version,attr"`
-	Channel Channel  `xml:"channel"`
 }
