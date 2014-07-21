@@ -1,11 +1,11 @@
-package dublincore 
+package dublincore
 
 import (
 	"time"
 )
 
 type DublinCore struct {
-    Title       string    `xml:"http://purl.org/dc/elements/1.1/ title"`
+	Title       string    `xml:"http://purl.org/dc/elements/1.1/ title"`
 	Creator     string    `xml:"http://purl.org/dc/elements/1.1/ creator"`
 	Subject     string    `xml:"http://purl.org/dc/elements/1.1/ subject"`
 	Description string    `xml:"http://purl.org/dc/elements/1.1/ description"`

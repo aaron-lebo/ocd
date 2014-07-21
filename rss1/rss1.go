@@ -2,8 +2,8 @@ package rss1
 
 import (
 	"encoding/xml"
-    "github.com/fisher-lebo/ocd/modules/dublincore"
-    "github.com/fisher-lebo/ocd/modules/syndication"
+	"github.com/fisher-lebo/ocd/modules/dublincore"
+	"github.com/fisher-lebo/ocd/modules/syndication"
 )
 
 type RDF struct {
