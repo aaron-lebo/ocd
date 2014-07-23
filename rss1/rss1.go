@@ -31,7 +31,7 @@ type Item struct {
 	Link        string `xml:"link"`
 	Description string `xml:"description"`
 	dublincore.DublinCore
-    taxonomy.Taxonomy
+	taxonomy.Taxonomy
 }
 
 type Image struct {

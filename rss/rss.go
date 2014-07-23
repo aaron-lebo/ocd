@@ -2,7 +2,7 @@ package rss
 
 import (
 	"encoding/xml"
-	"github.com/fisher-lebo/ocd/atom"
+	"github.com/fisher-lebo/ocd/modules/atom"
 	"time"
 )
 
@@ -32,7 +32,7 @@ type Channel struct {
 	SkipHours     []int      `xml:"skipHours>hour"`
 	SkipDays      []string   `xml:"skipDays>day"`
 	Items         []Item     `xml:"item"`
-	AtomLink      atom.Link  `xml:"http://www.w3.org/2005/Atom link"`
+	atom.Atom
 }
 
 type Category struct {

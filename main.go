@@ -30,7 +30,7 @@ func main() {
 		fmt.Println("Error parsing response:", err)
 	} else {
 		fmt.Println(rss_.Channel.Link)
-		fmt.Printf("%+v\n", rss_.Channel.AtomLink)
+		fmt.Printf("%+v\n", rss_.Channel.Atom.Link)
 		for _, item := range rss_.Channel.Items {
 			fmt.Println(item.Title)
 		}
@@ -54,10 +54,10 @@ func main() {
 		fmt.Println("Error parsing response:", err)
 	} else {
 		for _, item := range rdf.Items {
-            fmt.Printf("%+v\n", item)
-            for _, topic := range item.Topics {
-                fmt.Println(topic)
-            }
+			fmt.Printf("%+v\n", item)
+			for _, topic := range item.Topics {
+				fmt.Println(topic)
+			}
 		}
 	}
 }
