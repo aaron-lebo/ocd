@@ -5,8 +5,8 @@ import (
 )
 
 type Media struct {
-	Title     Title     `xml:"http://search.yahoo.com/mrss/ title"`
-	Thumbnail Thumbnail `xml:"http://search.yahoo.com/mrss/ thumbnail"`
+	Title      Title       `xml:"http://search.yahoo.com/mrss/ title"`
+	Thumbnails []Thumbnail `xml:"http://search.yahoo.com/mrss/ thumbnail"`
 }
 
 type Title struct {
@@ -16,7 +16,7 @@ type Title struct {
 
 type Thumbnail struct {
 	Url    string    `xml:"url,attr"`
-	Height string    `xml:"height,attr"`
-	Width  string    `xml:"width,attr"`
+	Height int       `xml:"height,attr"`
+	Width  int       `xml:"width,attr"`
 	Time   time.Time `xml:"time,attr"`
 }

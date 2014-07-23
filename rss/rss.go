@@ -66,7 +66,7 @@ type TextInput struct {
 }
 
 type Item struct {
-	Title       string     `xml:"title"`
+	Title       string     `xml:"rss title"`
 	Link        string     `xml:"link"`
 	Description string     `xml:"description"`
 	Author      string     `xml:"author"`
