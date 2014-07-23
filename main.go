@@ -54,7 +54,10 @@ func main() {
 		fmt.Println("Error parsing response:", err)
 	} else {
 		for _, item := range rdf.Items {
-			fmt.Println(item)
+            fmt.Printf("%+v\n", item)
+            for _, topic := range item.Topics {
+                fmt.Println(topic)
+            }
 		}
 	}
 }

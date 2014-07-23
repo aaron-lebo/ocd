@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"github.com/fisher-lebo/ocd/modules/dublincore"
 	"github.com/fisher-lebo/ocd/modules/syndication"
+	"github.com/fisher-lebo/ocd/modules/taxonomy"
 )
 
 type RDF struct {
@@ -30,6 +31,7 @@ type Item struct {
 	Link        string `xml:"link"`
 	Description string `xml:"description"`
 	dublincore.DublinCore
+    taxonomy.Taxonomy
 }
 
 type Image struct {
