@@ -33,6 +33,7 @@ func main() {
 		fmt.Printf("%+v\n", rss_.Channel.Atom.Link)
 		for _, item := range rss_.Channel.Items {
 			fmt.Println(item.Title)
+			fmt.Println(item.Media)
 		}
 		return
 	}

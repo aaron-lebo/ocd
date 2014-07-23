@@ -3,6 +3,7 @@ package rss
 import (
 	"encoding/xml"
 	"github.com/fisher-lebo/ocd/modules/atom"
+	"github.com/fisher-lebo/ocd/modules/media"
 	"time"
 )
 
@@ -75,6 +76,7 @@ type Item struct {
 	Guid        Guid       `xml:"guid"`
 	PubDate     string     `xml:"pubDate"`
 	Source      Source     `xml:"source"`
+	media.Media
 }
 
 type Enclosure struct {
