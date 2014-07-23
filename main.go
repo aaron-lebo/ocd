@@ -55,7 +55,7 @@ func main() {
 	} else {
 		for _, item := range rdf.Items {
 			fmt.Printf("%+v\n", item)
-			for _, topic := range item.Topics {
+			for _, topic := range item.Topics.Lis {
 				fmt.Println(topic)
 			}
 		}
