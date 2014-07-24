@@ -2,9 +2,9 @@ package rss1
 
 import (
 	"encoding/xml"
-	"github.com/fisher-lebo/ocd/modules/dublincore"
-	"github.com/fisher-lebo/ocd/modules/syndication"
-	"github.com/fisher-lebo/ocd/modules/taxonomy"
+	"github.com/fisher-lebo/ocd/feeds/modules/dublincore"
+	"github.com/fisher-lebo/ocd/feeds/modules/syndication"
+	"github.com/fisher-lebo/ocd/feeds/modules/taxonomy"
 )
 
 type RDF struct {
