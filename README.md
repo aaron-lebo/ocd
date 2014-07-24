@@ -5,4 +5,4 @@ This project contains parsers for RSS (0.9 through 2) and Atom feeds using the x
 
     ./ocd https://news.ycombinator.com/rss
     
-The current setup should allow new modules to be easily added without conflict. If you would like to include a module that is not included, please send a pull request with a working implementation. See the modules directory for examples. All modules should be properly namespaced.
+The current setup should allow new modules to be easily added without conflict. If you would like to add a module, please send a pull request with a working implementation. See the modules directory for examples. All modules should be properly namespaced.
