@@ -2,8 +2,8 @@ package rss
 
 import (
 	"encoding/xml"
-	"github.com/fisher-lebo/ocd/feeds/modules/atom"
-	"github.com/fisher-lebo/ocd/feeds/modules/media"
+	"github.com/aaron-lebo/ocd/feeds/modules/atom"
+	"github.com/aaron-lebo/ocd/feeds/modules/media"
 	"time"
 )
 
